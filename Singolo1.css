@@ -1,6 +1,10 @@
 @font-face {
 src: url(./fonts/lato/Lato-Regular.ttf);
 font-family: 'Lato';
+src: url(./fonts/lato/Lato-Black.ttf);
+font-family: 'Lato-black';
+src: url(./fonts/lato/Lato-Light.ttf);
+font-family: 'Lato-italic';
 
 }
 header {
@@ -20,9 +24,10 @@ header {
     align-items: center;
 }
 .logo_container {
-color: #ffffff;
-display: flex;
-margin-left: 11px;
+    color: #ffffff;
+    display: flex;
+    margin-left: 7px;
+    margin-bottom: 6px;
 }
 .logo_title {
 font-size: 25px;
@@ -61,14 +66,14 @@ li {
 li:first-child {
 color: #f06c64;
 }
-.header_bottom {
-    width: 100%;
+.header_line {
+    width: 1020px;
     height: 6px;
     background-color: #323746;
 }
 .slider {
 width: 100%;
-height: 605px;
+height: 600px;
 background-color: #f06c64;
 position: relative;
 }
@@ -85,7 +90,7 @@ position: relative;
 }
 .iphone_vertical_container {
    width: 100%;
-   height: 100%;
+   height: 50%;
     
 }
 .iphone_vertical {
@@ -102,24 +107,22 @@ position: relative;
 .Red_Dot {
     padding-left: 102px;
     padding-top: 17px;
-    }
-    /* /* .Outer_Circle {
-        position: absolute;
-        top: 19%;
-        left: 23.5%; */
+    border-radius: 50%;
+    
+}
+    
     
     .Speaker {
         padding-top: 6px;
         padding-left: 88px; 
     }
     .Layer_6 {
-        padding-top: 17px;
-        padding-left: 11px;
+        /* padding-top: 17px;
+        padding-left: 11px; */
+        margin-top: 15px;
+        margin-left: 13px;
+        box-shadow: 0px 1px 0px 4px #c5c5c5;
     }
-    /* .Circle {
-        position: absolute;
-        top: 19%;
-        left: 23.5%; */
     .Square_container {
         margin-top: 4px;
         margin-left: 85px;
@@ -151,19 +154,29 @@ position: relative;
         margin-left: 198px;
         transform: rotate(270deg);
         transform-origin: bottom left;
+        box-shadow: 0px 1px 0px 4px #c5c5c5;
     }
     .services {
         width: 100%;
         height: 500px;
-        background-color: #ffffff
-}
+        background-color: #f2f2f2;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        padding-top: 30px;
+    }
+    
+
 .services_title {
+    width: 100%;
     font-size: 30px;
     line-height: 18px;
     color: #666d89;
-    font-family: "Lato";
+    font-family: "Lato-black";
     font-weight: 900;
     text-align: left;
+    padding-top: 35px;
+    padding-left: 500px;
 }
 .services_subtitle {
     width: 940px;
@@ -171,7 +184,58 @@ height: 57px;
 font-size: 18px;
 line-height: 30px;
 color: #767e9e;
-font-family: "Lato";
+font-family: 'Lato-italic';
 font-weight: 300;
 text-align: left;
+padding-top: 27px;
+
+}
+a {
+    white-space:nowrap;
+}
+.services_container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-column-gap: 20px;
+    margin-top: 50px;
+    }
+.services_row {
+width: 300px;
+height: 125px;
+background:#f2f2f2;
+display: flex;
+align-items: flex-start;
+
+}
+.describtion_container {
+display: flex;
+flex-direction: column;
+padding-left: 18px;
+
+}
+h2 {
+    font-size: 18px;
+line-height: 18px;
+color: #666d89;
+font-family: "Lato";
+font-weight: 900;
+text-align: left;
+margin: 0 auto;
+padding-right: 100px;
+white-space:nowrap;
+}
+p {
+    width: 219px;
+height: 128px;
+font-size: 12px;
+line-height: 22px;
+color: #767e9e;
+font-family: "Lato-italic";
+font-weight: 400;
+text-align: left;
+}
+.services_line {
+    width: 1020px;
+    height: 6px;
+    background-color: #ffffff;
 }

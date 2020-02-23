@@ -65,6 +65,7 @@ li {
 }
 li:first-child {
 color: #f06c64;
+cursor: pointer;
 }
 .header_line {
     width: 1020px;

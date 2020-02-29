@@ -1,0 +1,20 @@
+{
+  "name": "singolo",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "style": "sass --watch sass/singolo2.scss sass/singolo2.css",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Andryteck/singolo.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Andryteck/singolo/issues"
+  },
+  "homepage": "https://github.com/Andryteck/singolo#readme"
+}

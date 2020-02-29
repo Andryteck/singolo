@@ -4,3 +4,5 @@ layouts
 base
 *.scss
 *.json
+!Singolo1.css
+!singolo1.css

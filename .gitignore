@@ -1,8 +1,6 @@
-abstract
-components
-layouts
-base
+sass
 *.scss
 *.json
+*.css
 !Singolo1.css
 !singolo2.css

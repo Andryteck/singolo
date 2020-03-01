@@ -184,12 +184,10 @@
     text-align: left;
     margin-top: -17px;
     margin-bottom: 22px;
-    letter-spacing: 0.02em;
+    
     
   }
-  a {
-    white-space: nowrap;
-  }
+  
   
   .social_conteiner {
     display: flex;

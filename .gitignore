@@ -1,6 +1,6 @@
-sass
+/sass/*
+normalize.css
 *.scss
 *.json
-*.css
 !Singolo1.css
 !singolo2.css

@@ -3,3 +3,5 @@
 [Singolo. Part 2](https://Andryteck.github.io/singolo/singolo2.html)
 
 [Singolo. Part 3](https://Andryteck.github.io/singolo/singolo3.html)
+
+[Full project](https://Andryteck.github.io/singolo/index.html)

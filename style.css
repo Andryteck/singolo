@@ -34,13 +34,19 @@
     font-weight: normal;
     font-style: normal;
   }
-    
+  
     header {
         width: 100%;
         background: #2d303a;
         border-bottom: 6px solid #323746;
+        position: sticky;
+        top: 0;
+        z-index: 10;
+
+        
         
     }
+    
     .container {
         width: 1000px;
         height: 100%;
@@ -51,6 +57,7 @@
         flex-direction: row;
         justify-content: space-between;
         align-items: center;
+        
     }
     .logo_container {
         color: #ffffff;
@@ -92,15 +99,30 @@
     }
     
     
-    li {
+    li  {
         list-style: none;
         color: #ffffff;
         padding: 11px 17px;
     }
-    li:first-child {
-        color: #f06c64;
-        cursor: pointer;
+    a {
+        color: #ffffff;
+        text-decoration: none;
     }
+    nav ul li,
+   .active li {
+  display: inline-block;
+  
+  list-style-type: none;
+}
+nav a:hover {
+    color: #F06C64;
+  }
+  
+.active {
+  color: #f06c64;
+}
+  
+    
     .header_line {
         width: 1020px;
         height: 6px;

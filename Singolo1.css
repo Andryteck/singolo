@@ -78,13 +78,13 @@ height: 600px;
 background-color: #f06c64;
 position: relative;
 }
-.arrow_left {
+.slider__btn-prev {
     position: absolute;
     top: 46%;
     left: 17.5%;
 
 }
-.arrow_right {
+.slider__btn-next {
     position: absolute;
     top: 46%;
     left: 81.5%;

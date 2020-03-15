@@ -11,7 +11,7 @@
 
 <body>
     <header>
-        <div class="container"><a name ='0'></a>
+        <div class="container"><a name='0'></a>
             <div class="logo_container">
                 <h1 class="logo_title">Singolo</h1>
                 <span class="logo_icon">*</span>
@@ -28,33 +28,40 @@
         </div>
     </header>
     <section class="slider">
-        <div class="arrow_left"><img src="./icons/left.png"></div>
-        <div class="iphone_vertical_container">
-            <div class="iphone_vertical">
-                <img class="Red_Dot" src="./icons/Red_Dot.png">
-                <img class="Speaker" src="./icons/Speaker.png">
-                <img class="Layer_6" src="./icons/Layer 6.png">
-                <div class="Square_container"><img class="Square" src="./icons/Square.png"></div>
+        <div class="wrapper slider__wrapper">
+            <div class="slider__slides">
+                <div clas="slide slide_slide-1 fade show">
+                    <div class="iphone_vertical_container">
+                        <div class="iphone_vertical">
+                            <img class="Red_Dot" src="./icons/Red_Dot.png">
+                            <img class="Speaker" src="./icons/Speaker.png">
+                            <img class="Layer_6" src="./icons/Layer 6.png">
+                            <div class="Square_container"><img class="Square" src="./icons/Square.png"></div>
+                        </div>
+                    </div>
+                    <div class="iphone_vertical_container">
+                        <div class="iphone_horizontal">
+                            <img class="Red_Dot" src="./icons/Red_Dot.png">
+                            <img class="Speaker" src="./icons/Speaker.png">
+                            <img class="Layer_5" src="./icons/Layer 5.png">
+                            <div class="Square_container"><img class="Square" src="./icons/Square.png"></div>
+
+                        </div>
+                    </div>
+                </div>
+                <div class="slide slide_slide-2 fade slider_blue" id = "slide-2">
+                    <img src='assets/icons/blue-phone.jpg' alt="blue-phone" width="900px" height="100%">
+                </div>
+                <button class="slider__btn-prev" type="button" onclick="nextSlide(-1)" href="#slider"><img src="./icons/left.png"></button>
+                <button class="slider__btn-next" type="button" onclick="nextSlide(1)" href="#slider"><img src="./icons/right.png"></button>
             </div>
         </div>
-        <div class="iphone_vertical_container">
-            <div class="iphone_horizontal">
-                <img class="Red_Dot" src="./icons/Red_Dot.png">
-
-                <img class="Speaker" src="./icons/Speaker.png">
-                <img class="Layer_5" src="./icons/Layer 5.png">
-
-                <div class="Square_container"><img class="Square" src="./icons/Square.png"></div>
-
-            </div>
-        </div>
-        <div class="arrow_right"><img src="./icons/right.png"></div>
     </section>
     <section class="services">
-        <div class="wrapper"><a name = '1'></a>
+        <div class="wrapper"><a name='1'></a>
             <h2>Our Services</h2>
             <div class="services_subtitle">Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum. Duis
-                    mollis, non commodo luctus, nisi erat portittor
+                mollis, non commodo luctus, nisi erat portittor
                 ligula,eget lacinia odio sem nec elit. Fursce dapibus,tellus ac cursus commodo,tortor mauris condimentum
                 nibh.</div>
             <div class="services_container">
@@ -115,36 +122,36 @@
         </div>
     </section>
     <section class="portfolios">
-        <div class="wrapper"><a name = '2'></a>
+        <div class="wrapper"><a name='2'></a>
             <h2>Portfolio</h2>
             <p class="portfolio_describtion">Duis mollis, est non commodo luctus, nisi erat porttitor ligula, eget
                 lacinia odio sem nec elit. </p>
-            <div class="portfolio__btns">
-                <button class="btn btn_selected">All</button>
-                <button class="btn btn_bordered">Web Design</button>
-                <button class="btn btn_bordered">Graphic Design</button>
-                <button class="btn btn_bordered">Artwork</button>
+            <div class="portfolio__btns" id="tag">
+                <button class="btn btn_selected" type="button">All</button>
+                <button class="btn" type="button">Web Design</button>
+                <button class="btn" type="button">Graphic Design</button>
+                <button class="btn" type="button">Artwork</button>
             </div>
-            <div class="layout-4-column">
-                <div><img src="./icons/Без названия (1).svg" alt="" class="project8"></div>
-                <div> <img src="./icons/Без названия (2).svg" alt="" class="project5"></div>
-                <div><img src="./icons/Без названия (3).svg" alt="" class="project9"></div>
-                <div><img src="./icons/Без названия (4).svg" alt="" class="project1"></div>
-                <div><img src="./icons/Без названия (5).svg" alt="" class="project7"></div>
-                <div><img src="./icons/Без названия (6).svg" alt="" class="project8"></div>
-                <div><img src="./icons/Без названия (7).svg" alt="" class="project8"></div>
-                <div><img src="./icons/Без названия (8).svg" alt="" class="project8"></div>
-                <div><img src="./icons/Без названия.svg" alt="" class="project8"></div>
-                <div><img src="./icons/Без названия (13).svg" alt="" class="project8"></div>
-                <div><img src="./icons/Без названия (10).svg" alt="" class="project8"></div>
-                <div><img src="./icons/Без названия (11).svg" alt="" class="project8"></div>
+            <div class="layout-4-column" id="image">
+                <div class="layout_img"><img class="portfolio_img" src="./icons/Без названия (1).svg" alt="11"></div>
+                <div class="layout_img"> <img class="portfolio_img" src="./icons/Без названия (2).svg" alt="22" ></div>
+                <div class="layout_img"><img class="portfolio_img" src="./icons/Без названия (3).svg" alt="33" ></div>
+                <div class="layout_img"><img class="portfolio_img" src="./icons/Без названия (4).svg" alt="44" ></div>
+                <div class="layout_img"><img class="portfolio_img" src="./icons/Без названия (5).svg" alt="55" ></div>
+                <div class="layout_img"><img class="portfolio_img" src="./icons/Без названия (6).svg" alt="66" ></div>
+                <div class="layout_img"><img class="portfolio_img" src="./icons/Без названия (7).svg" alt="77" ></div>
+                <div class="layout_img"><img class="portfolio_img" src="./icons/Без названия (8).svg" alt="88" ></div>
+                <div class="layout_img"><img class="portfolio_img" src="./icons/Без названия.svg" alt="99" ></div>
+                <div class="layout_img"><img class="portfolio_img" src="./icons/Без названия (13).svg" alt="111" ></div>
+                <div class="layout_img"><img class="portfolio_img" src="./icons/Без названия (10).svg" alt="222" ></div>
+                <div class="layout_img"><img class="portfolio_img" src="./icons/Без названия (11).svg" alt="333" ></div>
 
             </div>
 
 
     </section>
     <section class="about-us">
-        <div class="wrapper"><a name = '3'></a>
+        <div class="wrapper"><a name='3'></a>
             <h2>About Us</h2>
             <p class="about-us__title">Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum. Duis mollis,
                 non commodo luctus, nisi
@@ -219,7 +226,7 @@
             </div>
     </section>
     <section class="contacts">
-        <div class="wrapper"><a name = '4'></a>
+        <div class="wrapper"><a name='4'></a>
             <h2>Get a Quote</h2>
             <p>Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum. Duis mollis, non commodo luctus, nisi
                 erat porttitor ligula, eget lacinia odio sem nec elit. Fusce dapibus, tellus ac cursus commodo, tortor

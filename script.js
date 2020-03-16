@@ -8,18 +8,27 @@ window.addEventListener('DOMContentLoaded', function() {
    btnNext = document.querySelector('.slider__btn-next'),
    btnSlider = document.querySelector(".slider__slides"),
    IMAGE = document.getElementById('image'),
-   TAG = document.getElementById('tag');
+   TAG = document.getElementById('tag'),
+   BUTTON = document.getElementById('btn'),
+   CLOSE_BUTTON = document.getElementById('close-btn'),
+   // -----switch tags-----
+   TAG_SCREEN = document.querySelector('.Square_container'),
+   ALL_PHONE = document.querySelector('.iphone_vertical_container');
+
+
+
+
    
 
 
-  //  navigation
+  //  -----navigation-----
 
    nav.addEventListener('click', (event) => {
     nav.querySelectorAll('a').forEach(element => element.classList.remove('active'));
     event.target.classList.add('active')
    })
 
-  //  tags
+  //  -----tags-----
 
   
   TAG.addEventListener('click', (event) => {
@@ -36,12 +45,20 @@ window.addEventListener('DOMContentLoaded', function() {
   
   });
 
-   // switch tags
+   // -----switch tags-----
 
    IMAGE.addEventListener('click', (event) => {
     IMAGE.querySelectorAll('img').forEach(el => el.classList.remove('active_img'));
     event.target.classList.add('active_img');
   });
+
+  // -----switch screen-----
+
+  TAG_SCREEN.addEventListener('click', (event) => {
+    ALL_PHONE.querySelector('.iphone-visible').classList.remove('iphone-visible');
+    event.target.classList.add('iphone-hidden');
+  });
+
 
   //  slider
 
@@ -81,6 +98,34 @@ window.addEventListener('DOMContentLoaded', function() {
   //   btnSlider.querySelectorAll('button').forEach(nextSlide(-1))
   // })
 
+// ----- Get a quote -------------
+BUTTON.addEventListener('click', () => {
+  let name = document.getElementById('name');
+  let email = document.getElementById('email');
+  let subject = document.getElementById('subject').value;
+  let describe = document.getElementById('describe').value;
+  if (name.validity.valid && email.validity.valid) {
+    document.getElementById('message-block').classList.remove('hidden');
+  } else {
+    alert("Проверьте введенные данные name и Email");
+  }
+    if (subject == "Singolo") {
+      subject = "Тема: " + subject;
+  } else {
+    subject = 'Без темы';
+  }
+  if (describe != '') {
+    describe = "Описание: " + describe;
+  } else {
+    describe = "Без описания";
+  }
+  document.getElementById('result').innerText = "\n" + subject + "\n" + describe;
+  
+});
+CLOSE_BUTTON.addEventListener('click', () => {
+  document.getElementById('Form').reset();
+  document.getElementById('message-block').classList.add('hidden');
+});
 
 
 

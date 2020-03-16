@@ -12,8 +12,14 @@ window.addEventListener('DOMContentLoaded', function() {
    BUTTON = document.getElementById('btn'),
    CLOSE_BUTTON = document.getElementById('close-btn'),
    // -----switch tags-----
-   TAG_SCREEN = document.querySelector('.Square_container'),
-   ALL_PHONE = document.querySelector('.iphone_vertical_container');
+   TAG_BUTTON = document.querySelector('.Square_container'),
+   TAG_SCREEN_VERTICAL = document.querySelector('.iphone-visible'),
+   TAG_SCREEN_HORIZONTAL = document.querySelector('.iphone-visible-horizontal'),
+   TAG_BUTTON_HORIZONTAL = document.querySelector('.Square_container_horizontal');
+   let horizontal_btn = 0;
+   let vertical_btn = 0;
+
+
 
 
 
@@ -54,9 +60,26 @@ window.addEventListener('DOMContentLoaded', function() {
 
   // -----switch screen-----
 
-  TAG_SCREEN.addEventListener('click', (event) => {
-    ALL_PHONE.querySelector('.iphone-visible').classList.remove('iphone-visible');
-    event.target.classList.add('iphone-hidden');
+  TAG_BUTTON.addEventListener('click', (event) => {
+    if (vertical_btn % 2 == 0) {
+    TAG_SCREEN_VERTICAL.classList.remove('iphone-visible');
+    TAG_SCREEN_VERTICAL.classList.add('iphone-hidden');
+    } else {
+    TAG_SCREEN_VERTICAL.classList.remove('iphone-hidden');
+    TAG_SCREEN_VERTICAL.classList.add('iphone-visible');
+    }
+    vertical_btn++;
+  });
+
+  TAG_BUTTON_HORIZONTAL.addEventListener('click', (event) => {
+    if (horizontal_btn % 2 == 0) {
+    TAG_SCREEN_HORIZONTAL.classList.remove('iphone-visible-horizontal');
+    TAG_SCREEN_HORIZONTAL.classList.add('iphone-hidden');
+    } else {
+    TAG_SCREEN_HORIZONTAL.classList.remove('iphone-hidden');
+    TAG_SCREEN_HORIZONTAL.classList.add('iphone-visible-horizontal');
+    }
+    horizontal_btn++;
   });
 
 

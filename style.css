@@ -211,10 +211,13 @@ nav a:hover {
             background: black; 
             width: 188px;
             height: 333px;
-            z-index: 1;
+            margin-left: 13px;
+             margin-top: 11px;
+             box-shadow: 0px 1px 0px 4px #c5c5c5;
             
         } 
-        .Square_container {
+    .Square_container {
+            background-image: url(./assets/icons/Square.png);
             margin-top: 10px;
             margin-left: 83px;
             width: 40px;
@@ -222,13 +225,21 @@ nav a:hover {
             border: 2px solid #FAFAFA;
             border-radius: 50%;
             background: #FAFAFA;
+            overflow: hidden;
             }
-        .Square {
-            padding-top: 11px;
-            padding-left: 11px;
-            
-        }
-        .iphone_horizontal {
+     .Square_container_horizontal {
+                background-image: url(./assets/icons/Square.png);
+                margin-top: 10px;
+                margin-left: 83px;
+                width: 40px;
+                height: 40px;
+                border: 2px solid #FAFAFA;
+                border-radius: 50%;
+                background: #FAFAFA;
+                overflow: hidden;
+            }
+
+    .iphone_horizontal {
         width: 215px;
         height: 458px;
         position: absolute;
@@ -240,7 +251,10 @@ nav a:hover {
             transform: rotate(90deg);
             transform-origin: bottom left;
         }
-        .Layer_5 {
+    .iphone-visible-horizontal {
+            background-image: url(./assets/icons/iphone-horizontal-screen.png);
+            width: 333px;
+            height: 188px;
             margin-top: 163px;
             margin-left: 198px;
             transform: rotate(270deg);

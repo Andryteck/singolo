@@ -10,8 +10,8 @@
 </head>
 
 <body>
-    <header>
-        <div class="container"><a name='0'></a>
+    <header class="menu">
+        <div class="header__wrapper wrapper"><a name='0'></a>
             <div class="logo_container">
                 <h1 class="logo_title">Singolo</h1>
                 <span class="logo_icon">*</span>
@@ -27,7 +27,7 @@
             </nav>
         </div>
     </header>
-    <section class="slider">
+    <section class="slider" id = 'slider'>
         <div class="wrapper slider__wrapper">
             <div class="slider__slides">
                 <div clas="slide slide_slide-1 fade show">
@@ -36,9 +36,6 @@
                             <img class="Red_Dot" src="./icons/Red_Dot.png">
                             <img class="Speaker" src="./icons/Speaker.png">
                             <div class="iphone-visible"></div>
-                            <!-- <div class="IPhone_vertical_shadow">
-                                <img src="assets/images/phone-vertical-shadow.png" alt="">
-                            </div> -->
                             <div class="Square_container"></div>
                         </div>
                     </div>
@@ -52,18 +49,18 @@
                         </div>
                     </div>
                 </div>
-                <div class="slide slide_slide-2 fade slider_blue" id="slide-2">
+                <div class="slide slide_slide-2 fade blue_slide" id="slide-2">
                     <img src='assets/icons/blue-phone.jpg' alt="blue-phone" width="900px" height="100%">
                 </div>
-                <button class="slider__btn-prev" type="button" onclick="nextSlide(-1)" href="#slider"><img
+                <button class="slider__btn-prev" id="slider__btn-prev" type="button"  href="#slider"><img
                         src="./icons/left.png"></button>
-                <button class="slider__btn-next" type="button" onclick="nextSlide(1)" href="#slider"><img
+                <button class="slider__btn-next" id="slider__btn-next" type="button"  href="#slider"><img
                         src="./icons/right.png"></button>
             </div>
         </div>
     </section>
     <section class="services">
-        <div class="wrapper"><a name='1'></a>
+        <div class="services__wrapper wrapper"><a name='1'></a>
             <h2>Our Services</h2>
             <div class="services_subtitle">Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum. Duis
                 mollis, non commodo luctus, nisi erat portittor
@@ -127,7 +124,7 @@
         </div>
     </section>
     <section class="portfolios">
-        <div class="wrapper"><a name='2'></a>
+        <div class="wrapper portfolio__wrapper"><a name='2'></a>
             <h2>Portfolio</h2>
             <p class="portfolio_describtion">Duis mollis, est non commodo luctus, nisi erat porttitor ligula, eget
                 lacinia odio sem nec elit. </p>
@@ -156,7 +153,7 @@
 
     </section>
     <section class="about-us">
-        <div class="wrapper"><a name='3'></a>
+        <div class="wrapper about__wrapper"><a name='3'></a>
             <h2>About Us</h2>
             <p class="about-us__title">Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum. Duis mollis,
                 non commodo luctus, nisi
@@ -231,7 +228,7 @@
             </div>
     </section>
     <section class="contacts">
-        <div class="wrapper"><a name='4'></a>
+        <div class="wrapper feedback__wrapper"><a name='4'></a>
             <h2>Get a Quote</h2>
             <p>Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum. Duis mollis, non commodo luctus, nisi
                 erat porttitor ligula, eget lacinia odio sem nec elit. Fusce dapibus, tellus ac cursus commodo, tortor

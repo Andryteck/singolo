@@ -4,9 +4,16 @@ window.addEventListener('DOMContentLoaded', function() {
   let services = document.querySelector('.services'),
    portfolio = document.querySelector('.portfolio__btns'),
    nav = document.querySelector('.nav'),
+   //--- Slider. Переключение слайдов-------------
+
+  slides = document.querySelectorAll('.slider'),
+  currentSlide = 0,
+  isEnabled = true,
    btnPrev = document.querySelector('.slider__btn-prev'),
    btnNext = document.querySelector('.slider__btn-next'),
    btnSlider = document.querySelector(".slider__slides"),
+   //---- Portfolio------
+
    IMAGE = document.getElementById('image'),
    TAG = document.getElementById('tag'),
    BUTTON = document.getElementById('btn'),
@@ -42,16 +49,15 @@ window.addEventListener('DOMContentLoaded', function() {
       TAG.querySelectorAll('button').forEach(el => el.classList.remove('btn_selected'));
       event.target.classList.add('btn_selected');
       IMAGE.querySelectorAll('img').forEach(el => el.classList.remove('active_img'));
-      let IMGS = document.getElementById('image').querySelectorAll('img');
-      for (let i = IMGS.length - 2; i >= 0; i--) {
-        i = (i ^ 2) % IMGS.length;
-        IMAGE.appendChild(IMGS[i]);
+      let IMGS = document.getElementById('image');
+      for (let i = IMGS.children.length ; i >= 0; i--) {
+        IMAGE.appendChild(IMGS.children[Math.random() * i | 0 ] );
       }
     }
-  
+     
   });
 
-   // -----switch tags-----
+   // -----switch image-----
 
    IMAGE.addEventListener('click', (event) => {
     IMAGE.querySelectorAll('img').forEach(el => el.classList.remove('active_img'));
@@ -84,42 +90,61 @@ window.addEventListener('DOMContentLoaded', function() {
 
 
   //  slider
+  function changeCurrentSlide(n) {// функция изменяющая текущий слайд "карусель"
+    currentSlide = (n + slides.length) % slides.length;
+  }
+  function hideSlide(direction) { // функция скрытия текущего элемента
+    isEnabled = false;
+  slides[currentSlide].classList.add(direction);  // добавление в текущий элемент анимацию
+  slides[currentSlide].addEventListener('animationend', function () {
+    this.classList.remove('active_slide', direction);  
+  });
+  }
+  function showSlide(direction) { // функция появления следующего элемента
+    slides[currentSlide].classList.add('next', direction); //начало анимации на экране два слайда
+    slides[currentSlide].addEventListener('animationend', function () {
+    this.classList.remove('next', direction); // удаляем класс следующий, т.к. Анимация закончилась
+    this.classList.add('active_slide'); // объявляем след слайд актив
+    isEnabled = true;
+  });
+}
+function nextSlide(n) { //функция смены слайда право
+  hideSlide('to-left');
+  changeCurrentSlide(n + 1);
+  showSlide('from-right');
+  if (n % 2 == 0) {
+    document.querySelector('.slider').classList.remove('red_slide');
+    document.querySelector('.slider').classList.add('blue_slide');
+  } else {
+    document.querySelector('.slider').classList.remove('blue_slide');
+    document.querySelector('.slider').classList.add('red_slide');
+  }
+}
+function previousSlide(n) { //функция смены слайда право
+  hideSlide('to-right');
+  changeCurrentSlide(n - 1);
+  showSlide('from-left');
+  if (n % 2 == 0) {
+    document.querySelector('.slider').classList.remove('red_slide');
+    document.querySelector('.slider').classList.add('blue_slide');
+  } else {
+    document.querySelector('.slider').classList.remove('blue_slide');
+    document.querySelector('.slider').classList.add('red_slide');
+  }
+}
+  
 
-  // let slideIndex = 0,
-  //      counter = 0;
+document.querySelector('.slider__btn-prev').addEventListener('click', function () {
+  if (isEnabled) {
+    previousSlide(currentSlide);
+  }
+});
 
-  //      showSlides(0);
-
-  //      function nextSlide(n) {
-  //       return showSlides(n);
-  //   };
-
-  //   function showSlides(n) {
-  //     let slides = document.querySelectorAll('.slide');
-  //     slides.forEach(element => {
-  //         element.style.display = "none"
-  //     });
-  //     slideIndex += n;
-  //     if (slideIndex > slides.length - 1) {
-  //         slideIndex = 0;
-  //     }
-  //     if (slideIndex < 0) {
-  //         slideIndex = slides.length - 1;
-  //     }
-  //     slides[slideIndex].style.display = "block";
-  //     let slider = document.querySelector(".slider");
-  //     let slide2 = document.querySelector(".slide_slide-2");
-  //     console.log("showSlides -> slide2", slide2)
-  //     if (slide2.style.display === "block") {
-  //         slider.classList.add("slider_blue");
-  //     } else {
-  //         slider.classList.remove("slider_blue");
-  //     }
-  // }
-
-  // btnSlider.addEventListener('click',(event) => {
-  //   btnSlider.querySelectorAll('button').forEach(nextSlide(-1))
-  // })
+document.querySelector('.slider__btn-next').addEventListener('click', function () {
+  if (isEnabled) {
+    nextSlide(currentSlide);
+  }
+});
 
 // ----- Get a quote -------------
 BUTTON.addEventListener('click', () => {

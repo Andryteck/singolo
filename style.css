@@ -624,7 +624,6 @@ nav a:hover {
         padding: 0 40px;
         color: #f0d8d9;
         background-color: #f06c64;
-        border-bottom: 6px solid #ea676b;
       }
       .contacts p {
         margin-block-start: 27px;
@@ -757,16 +756,22 @@ nav a:hover {
       }
       
       footer {
-        padding-top: 22px;
-        padding-bottom: 19px;
-        background-color: var(--dark-background);
-        width: 100%;
+        background-color: #2d303a;
       }
       
-      footer .wrapper {
+      .footer__wrapper {
+        display: -webkit-box;
+        display: -ms-flexbox;
         display: flex;
+        -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
         justify-content: space-between;
+        -webkit-box-align: center;
+        -ms-flex-align: center;
         align-items: center;
+        min-height: 76px;
+        color: #666d89;
+        background-color: #2d303a;
       }
       
       footer .copyright {

@@ -172,6 +172,8 @@ window.addEventListener('DOMContentLoaded', function() {
       this.addHandlers();
     }
   }
+  const slider = new Slider();
+  slider.init();
 
 // ----- Get a quote -------------
 BUTTON.addEventListener('click', () => {

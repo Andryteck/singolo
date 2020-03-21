@@ -19,10 +19,10 @@ window.addEventListener('DOMContentLoaded', function() {
    BUTTON = document.getElementById('btn'),
    CLOSE_BUTTON = document.getElementById('close-btn'),
    // -----switch tags-----
-   TAG_BUTTON = document.querySelector('.Square_container'),
+   TAG_BUTTON = document.querySelector('.gallery__item_left-phone'),
    TAG_SCREEN_VERTICAL = document.querySelector('.iphone-visible'),
    TAG_SCREEN_HORIZONTAL = document.querySelector('.iphone-visible-horizontal'),
-   TAG_BUTTON_HORIZONTAL = document.querySelector('.Square_container_horizontal');
+   TAG_BUTTON_HORIZONTAL = document.querySelector('.gallery__item_right-phone');
    let horizontal_btn = 0;
    let vertical_btn = 0;
 
@@ -66,85 +66,112 @@ window.addEventListener('DOMContentLoaded', function() {
 
   // -----switch screen-----
 
+  
   TAG_BUTTON.addEventListener('click', (event) => {
-    if (vertical_btn % 2 == 0) {
-    TAG_SCREEN_VERTICAL.classList.remove('iphone-visible');
-    TAG_SCREEN_VERTICAL.classList.add('iphone-hidden');
-    } else {
-    TAG_SCREEN_VERTICAL.classList.remove('iphone-hidden');
-    TAG_SCREEN_VERTICAL.classList.add('iphone-visible');
-    }
-    vertical_btn++;
+  const { target } = event;
+    const dataClass = target.getAttribute('data-class');
+    if (!dataClass) return;
+
+    const content = this.slider.querySelector(`.${dataClass}-content`);
+    content.classList.toggle('display-off');
   });
 
   TAG_BUTTON_HORIZONTAL.addEventListener('click', (event) => {
-    if (horizontal_btn % 2 == 0) {
-    TAG_SCREEN_HORIZONTAL.classList.remove('iphone-visible-horizontal');
-    TAG_SCREEN_HORIZONTAL.classList.add('iphone-hidden');
-    } else {
-    TAG_SCREEN_HORIZONTAL.classList.remove('iphone-hidden');
-    TAG_SCREEN_HORIZONTAL.classList.add('iphone-visible-horizontal');
-    }
-    horizontal_btn++;
+    const { target } = event;
+    const dataClass = target.getAttribute('data-class');
+    if (!dataClass) return;
+
+    const content = this.slider.querySelector(`.${dataClass}-content`);
+    content.classList.toggle('display-off');
   });
 
 
-  //  slider
-  function changeCurrentSlide(n) {// функция изменяющая текущий слайд "карусель"
-    currentSlide = (n + slides.length) % slides.length;
-  }
-  function hideSlide(direction) { // функция скрытия текущего элемента
-    isEnabled = false;
-  slides[currentSlide].classList.add(direction);  // добавление в текущий элемент анимацию
-  slides[currentSlide].addEventListener('animationend', function () {
-    this.classList.remove('active_slide', direction);  
-  });
-  }
-  function showSlide(direction) { // функция появления следующего элемента
-    slides[currentSlide].classList.add('next', direction); //начало анимации на экране два слайда
-    slides[currentSlide].addEventListener('animationend', function () {
-    this.classList.remove('next', direction); // удаляем класс следующий, т.к. Анимация закончилась
-    this.classList.add('active_slide'); // объявляем след слайд актив
-    isEnabled = true;
-  });
-}
-function nextSlide(n) { //функция смены слайда право
-  hideSlide('to-left');
-  changeCurrentSlide(n + 1);
-  showSlide('from-right');
-  if (n % 2 == 0) {
-    document.querySelector('.slider').classList.remove('red_slide');
-    document.querySelector('.slider').classList.add('blue_slide');
-  } else {
-    document.querySelector('.slider').classList.remove('blue_slide');
-    document.querySelector('.slider').classList.add('red_slide');
-  }
-}
-function previousSlide(n) { //функция смены слайда право
-  hideSlide('to-right');
-  changeCurrentSlide(n - 1);
-  showSlide('from-left');
-  if (n % 2 == 0) {
-    document.querySelector('.slider').classList.remove('red_slide');
-    document.querySelector('.slider').classList.add('blue_slide');
-  } else {
-    document.querySelector('.slider').classList.remove('blue_slide');
-    document.querySelector('.slider').classList.add('red_slide');
-  }
-}
+  //  -------------slider-------------
+
+  class Slider {
+    constructor() {
+      this.currentSlide = 0;
+      this.isSliceEnabled = true;
+      this.slides = [];
   
-
-document.querySelector('.slider__btn-prev').addEventListener('click', function () {
-  if (isEnabled) {
-    previousSlide(currentSlide);
+      this.slider = null;
+      this.controlButtons = {
+        previousSlide: null,
+        nextSlide: null,
+      };
+    }
+  
+    changeCurrentSlide(index) {
+      const { slides } = this;
+  
+      this.currentSlide = (index + slides.length) % slides.length;
+    }
+  
+    hideItem(direction) {
+      const { slides, currentSlide } = this;
+      const slide = slides[currentSlide];
+  
+      this.isSliceEnabled = false;
+      slide.classList.add(direction);
+      slide.addEventListener('animationend', () => {
+        slide.classList.remove('slider__active', direction);
+      });
+    }
+  
+    showItem(direction) {
+      const { slides, currentSlide } = this;
+      const slide = slides[currentSlide];
+  
+      slide.classList.add('slider__next', direction);
+      slide.addEventListener('animationend', () => {
+        slide.classList.remove('slider__next', direction);
+        slide.classList.add('slider__active');
+        this.isSliceEnabled = true;
+      });
+    }
+  
+    nextItem(index) {
+      this.hideItem('to-left');
+      this.changeCurrentSlide(index + 1);
+      this.showItem('from-right');
+    }
+  
+    previousItem(index) {
+      this.hideItem('to-right');
+      this.changeCurrentSlide(index - 1);
+      this.showItem('from-left');
+    }
+  
+    sliderButtonClickHandler(callBack) {
+      if (this.isSliceEnabled) {
+        callBack(this.currentSlide);
+      }
+    }
+  
+    addHandlers() {
+      const { previousSlide, nextSlide } = this.controlButtons;
+      const { previousItem, nextItem } = this;
+      const gallery = this.slider.querySelector('.gallery');
+  
+      previousSlide.addEventListener('click', () => {
+        this.sliderButtonClickHandler(previousItem.bind(this));
+      });
+      nextSlide.addEventListener('click', () => {
+        this.sliderButtonClickHandler(nextItem.bind(this));
+      });
+      
+      
+    }
+  
+    init() {
+      this.slider = document.querySelector('.slider');
+      this.slides = this.slider.querySelectorAll('.slider__item');
+      this.controlButtons.previousSlide = this.slider.querySelector('.slider__button_previous');
+      this.controlButtons.nextSlide = this.slider.querySelector('.slider__button_next');
+  
+      this.addHandlers();
+    }
   }
-});
-
-document.querySelector('.slider__btn-next').addEventListener('click', function () {
-  if (isEnabled) {
-    nextSlide(currentSlide);
-  }
-});
 
 // ----- Get a quote -------------
 BUTTON.addEventListener('click', () => {
@@ -179,3 +206,23 @@ CLOSE_BUTTON.addEventListener('click', () => {
 
 
 });
+
+let arr1 = [1,2,3,4,5];
+let arr2 = [1,2,3,3,4,5,6];
+
+
+let arr3 = (arr1,arr2) => {
+  let result = [];
+  for (let i = 0; i < arr1.length;i ++) {
+    for (let j = 0; j < arr2.length; j++) {
+    if (arr1[i] != arr2[j]) {
+      result.push(arr1[i]);
+    }
+    }
+  }
+ return result;
+}
+console.log(arr3(arr1,arr2));
+
+
+

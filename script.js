@@ -206,6 +206,3 @@ CLOSE_BUTTON.addEventListener('click', () => {
 
 });
 
-
-
-

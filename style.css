@@ -66,15 +66,14 @@
     .logo_container {
         color: #ffffff;
         display: flex;
+        margin-right: 39%;
         justify-content: space-between;
-        margin-left: 12px;
         letter-spacing: -0.8px;
         
     }
     .logo_title {
     font-size: 25px;
     padding: 2px;
-    margin-left: 15px;
     line-height: 6px;
     color: #ffffff;
     font-family: 'LatoRegular';
@@ -428,7 +427,6 @@ nav a:hover {
         
     
      h2 {
-        width: 940px;
         font-size: 30px;
         line-height: 18px;
         color: #666d89;
@@ -439,8 +437,6 @@ nav a:hover {
         
     }
     .services_subtitle {
-        width: 940px;
-    height: 57px;
     font-size: 18px;
     line-height: 30px;
     color: #767e9e;
@@ -982,6 +978,9 @@ nav a:hover {
             grid-template: 1fr 1fr 1fr 1fr / 216px 216px 216px;
             grid-column-gap: 20px;
           }
+          .portfolio__wrapper {
+            padding-bottom: 50px;
+          }
           .services_container {
             grid-template-columns: repeat(2, 1fr);
           }
@@ -1030,6 +1029,18 @@ nav a:hover {
             left: 410px;
             top: 126px;
             width: 181px;
+            }
+            .employees_img {
+              width: 219px;
+              height: 219px;
+            }
+            input,
+            textarea,
+            form  {
+              width: 442px;
+            }
+            .contact-form__info {
+              width: 225px; 
             }
         }
     

@@ -1,0 +1,23 @@
+{
+  "name": "singolo",
+  "version": "1.0.0",
+  "description": "[Singolo. Part 1](https://Andryteck.github.io/singolo/Singolo1.html)",
+  "main": "index.js",
+  "scripts": {
+    "style": "sass --watch sass/singolo2.scss singolo2.css",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Andryteck/singolo.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Andryteck/singolo/issues"
+  },
+  "homepage": "https://github.com/Andryteck/singolo#readme",
+  "devDependencies": {
+    "npm-install-webpack-plugin": "^4.0.5"
+  }
+}

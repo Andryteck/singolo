@@ -993,9 +993,6 @@ nav a:hover {
             
          }
          
-        .gallery__item_left {
-            
-        }
         .gallery__item_left-phone {
             left: 63px; 
         }
@@ -1040,6 +1037,18 @@ nav a:hover {
     
      
         @media (max-width: 375px) {
+          .nav {
+            display: none;
+          }
+          .wrapper {
+            width: 375px;
+            padding: 0px 35px 30px 35px;
+          }
+          .header__wrapper {
+            display: flex;
+            align-items: center;
+          
+        }
             .layout-4-column {
             grid-template: 1fr 1fr 1fr 1fr / 151px 151px;
             gap: 10px;
@@ -1050,6 +1059,60 @@ nav a:hover {
             }
             .services_container {
                 grid-template-columns: repeat(1, 1fr);
+              }
+              .gallery__item {
+                width: 79px;
+                height: 168px;
+                top: 207px;
+
+              }
+              
+            .gallery__item_left-phone {
+              left: 10px;
+              border-radius: 12px;
+            }
+            .gallery__item_left-content {
+              width: 69px;
+              height: 122px;
+              top: 230.5px;
+              left: 15px;
+             }
+             .gallery__item_left-shadow {
+              width: 88px;
+              top: 213px;
+              left: 14px;
+             }
+             .gallery__item_right-phone {
+              left: 164px;
+              border-radius: 12px;
+            }
+            .gallery__item_right-content {
+              width: 122px;
+               height: 69px;
+              top: 257px;
+              left: 142px;
+            }
+                .gallery__item_right-shadow {
+                left: 410px;
+                top: 126px;
+                width: 181px;
+                }
+                .slider__button {
+                  left: -36px;
+                  
+                }
+                .slider__button_next {
+                  left: 0px;
+                }
+                .portfolio__btns button{
+                  font-size: 12px;
+                  margin-left: 8px;
+                }
+                .portfolio__btns>.btn_selected {
+                  margin-left: 0px;
+                }
+                .layout_img {
+                  height: 127px;
               }
               
         }

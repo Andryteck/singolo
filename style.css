@@ -1042,13 +1042,13 @@ nav a:hover {
           }
           .wrapper {
             width: 375px;
-            padding: 0px 35px 30px 35px;
+            padding: 0px 40px;
           }
           .header__wrapper {
             display: flex;
             align-items: center;
           
-        }
+          }
             .layout-4-column {
             grid-template: 1fr 1fr 1fr 1fr / 151px 151px;
             gap: 10px;
@@ -1104,6 +1104,9 @@ nav a:hover {
                 .slider__button_next {
                   left: 0px;
                 }
+                .portfolio__wrapper {
+                  padding-bottom: 35px;
+                }
                 .portfolio__btns button{
                   font-size: 12px;
                   margin-left: 8px;
@@ -1113,6 +1116,41 @@ nav a:hover {
                 }
                 .layout_img {
                   height: 127px;
+                  width: 151px;
               }
+              .about-us .layout-3-column {
+                margin-top: 20px;
+                display: grid;
+                grid-template-columns: repeat(1, 1fr);
+                gap: 18px;
+            }
+            .employees_img {
+              width: 314px;
+              height: 314px;
+          }
+          input,
+            textarea,
+            form  {
+              width: 290px;
+            }
+            .contact-form {
+              margin-top: 20px;
+            }
+            .contact-form__info {
+              width: 225px; 
+              margin-top: 20px;
+            }
+            .contact-form {
+              
+              flex-direction: column;
+            }
+            footer .copyright {
+              display: none;
+            }
+          .footer__wrapper {
+            align-items: center;
+            justify-content: center;
+          }
+              
               
         }

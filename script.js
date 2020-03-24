@@ -62,9 +62,8 @@ window.addEventListener('DOMContentLoaded', function() {
     
    IMAGE.addEventListener('click', (event) => {
     IMAGE.querySelectorAll('.layout_img').forEach(el => el.classList.remove('active_img'));
-    
     event.target.parentNode.classList.add('active_img');
-    console.log(event.target);
+
   });
 
   // -----switch screen-----

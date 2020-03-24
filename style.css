@@ -92,8 +92,8 @@
     .nav ul {
         display: flex;
         text-align: center;
-        padding: 0;
-        justify-content: flex-start;
+        flex-wrap: wrap;
+        justify-content: space-between;
         text-transform: uppercase;
         font-family: 'Lato';
         font-size: 12px;
@@ -598,12 +598,6 @@ nav a:hover {
         
       }
      
-      #image .layout_img::before {
-        content: '';
-        float: left;
-        padding-top: 100%;
-      }
-     
       .layout_img  {
         height: 187px;       
         width: 220px;   
@@ -614,11 +608,11 @@ nav a:hover {
         overflow: hidden;
       }
       
-      .layout-4-column div:hover {
+      /* .layout-4-column div:hover {
         transform: scale(0.95);
         cursor: pointer;
         transition: all 0.3s ease;
-      }
+      } */
       
       .about-us {
         background-color: #f2f2f2;
@@ -974,6 +968,9 @@ nav a:hover {
       }
 
       @media (max-width: 768px) {
+        .logo_container {
+          margin-right: 90px;
+        }
         .layout-4-column {
             grid-template: 1fr 1fr 1fr 1fr / 216px 216px 216px;
             grid-column-gap: 20px;
@@ -1018,13 +1015,11 @@ nav a:hover {
             left: 395px;
         }
         .gallery__item_right-content {
-            transform: rotate(90deg);
-            transform: rotate(90deg);
-            width: 141px;
-            height: 251px;
-            top: 147px;
-            left: 403px;
-            }
+            width: 251px;
+            height: 141px;
+            top: 201px;
+            left: 349px;
+        }
             .gallery__item_right-shadow {
             left: 410px;
             top: 126px;

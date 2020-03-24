@@ -18,6 +18,7 @@ window.addEventListener('DOMContentLoaded', function() {
    TAG = document.getElementById('tag'),
    BUTTON = document.getElementById('btn'),
    CLOSE_BUTTON = document.getElementById('close-btn'),
+   imageContainer = document.querySelectorAll('.layout_img');
    // -----switch tags-----
    TAG_BUTTON = document.querySelector('.gallery__item_left-phone'),
    TAG_SCREEN_VERTICAL = document.querySelector('.iphone-visible'),
@@ -58,10 +59,12 @@ window.addEventListener('DOMContentLoaded', function() {
   });
 
    // -----switch image-----
-
+    
    IMAGE.addEventListener('click', (event) => {
-    IMAGE.querySelectorAll('img').forEach(el => el.classList.remove('active_img'));
-    event.target.classList.add('active_img');
+    IMAGE.querySelectorAll('.layout_img').forEach(el => el.classList.remove('active_img'));
+    
+    event.target.parentNode.classList.add('active_img');
+    console.log(event.target);
   });
 
   // -----switch screen-----

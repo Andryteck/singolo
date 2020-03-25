@@ -595,10 +595,8 @@ nav a:hover {
     font-family: "Lato";
     font-weight: 900;
     text-align: left;
-    margin: 0 auto;
-    padding-right: 100px;
     white-space:nowrap;
-    
+  
     }
     .describtion-text {
         width: 219px;
@@ -1217,12 +1215,13 @@ nav a:hover {
               left: 142px;
             }
                 .gallery__item_right-shadow {
-                left: 410px;
-                top: 126px;
-                width: 181px;
+                  left: 170px;
+                  top: 217px;
+                  width: 90px;
                 }
                 .slider__button {
                   left: -36px;
+                  width: 35px;
                   
                 }
                 .slider__button_next {

@@ -4,4 +4,4 @@
 
 [Singolo. Part 3](https://Andryteck.github.io/singolo/singolo3.html)
 
-[Full project](https://Andryteck.github.io/singolo/index.html)
+[Full project](https://singolo-kulik.netlify.com/)

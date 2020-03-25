@@ -78,7 +78,6 @@
     color: #ffffff;
     font-family: 'LatoRegular';
     font-weight: 700;
-    
     text-transform: uppercase;
     }
     .logo_icon {
@@ -131,8 +130,8 @@ nav a:hover {
   opacity: 0;
 }
 .menu__btn {
-  display: flex; /* используем flex для центрирования содержимого */
-  align-items: center;  /* центрируем содержимое кнопки */
+  display: flex; /* use flex for elements */
+  align-items: center;  /* centre content */
   position: fixed;
   top: 32px;
   left: 20px;
@@ -141,7 +140,7 @@ nav a:hover {
   cursor: pointer;
   z-index: 1;
 }
-/* добавляем "гамбургер" */
+/* add "hamburger" */
 .menu__btn > span,
 .menu__btn > span::before,
 .menu__btn > span::after {
@@ -168,13 +167,14 @@ nav a:hover {
   width: 278px;
    height: 812px;
   margin: 0;
-  padding: 80px 0;
+  padding: 80px 0px ;
   list-style: none;
   text-align: center;
   background-color: #2D303A;
   box-shadow: 1px 0px 6px rgba(0, 0, 0, .2);
 }
-/* элементы меню */
+
+/* menu elements */
 .menu__item {
   display: block;
   padding: 12px 24px;
@@ -187,9 +187,27 @@ nav a:hover {
   line-height: 29px;
   letter-spacing: -0.035em;
 }
+.hamburger-logo_title {
+  position: absolute;
+  left: 80px;
+  bottom: 906px;
+  font-size: 25px;
+  line-height: 6px;
+  color: #ffffff;
+  font-family: 'LatoRegular';
+  font-weight: 700;
+    text-transform: uppercase;
+}
+.hamburger-logo_title::after {
+  content: "*";
+  color: #f06c64;
+}
 .hamburger-menu a:not(.current) {
   color: white;
   cursor: pointer;
+}
+.current {
+  margin-top: 180px;
 }
 #menu__toggle {
   width: 0px;
@@ -198,15 +216,13 @@ nav a:hover {
   background-color: #CFD8DC;
 }
 #menu__toggle:checked ~ .menu__btn > span {
-  transform: rotate(45deg);
+  transform: rotate(90deg);
 }
 #menu__toggle:checked ~ .menu__btn > span::before {
-  top: 0;
-  transform: rotate(0);
+  transform: rotate(180deg);
 }
 #menu__toggle:checked ~ .menu__btn > span::after {
-  top: 0;
-  transform: rotate(90deg);
+  transform: rotate(180deg);
 }
 #menu__toggle:checked ~ .menu__box {
   visibility: visible;
